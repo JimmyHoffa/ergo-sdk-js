@@ -1,28 +1,28 @@
 import axios, {AxiosInstance} from "axios"
-import {ErgoTree, HexString, TokenId, TxId, BoxId, Address} from "../"
-import * as network from "../network/models"
-import {Paging} from "./paging"
+import {Address, BoxId, ErgoTree, HexString, TokenId, TxId} from "../"
 import {NetworkContext} from "../entities/networkContext"
+import * as network from "../network/models"
+import {TokenSymbol} from "../types"
+import {JSONBI} from "../utils/json"
+import {Balance} from "../wallet/entities/balance"
 import {
+  AugAssetInfo,
   AugErgoBox,
   AugErgoTx,
   BoxAssetsSearch,
   BoxSearch,
-  ExplorerErgoBox,
-  ExplorerErgoTx,
-  explorerToErgoBox,
-  explorerToErgoTx,
-  fixAssetInfo,
-  AugAssetInfo,
   ExplorerBalance,
   explorerBalanceToWallet,
+  ExplorerErgoBox,
+  ExplorerErgoTx,
   ExplorerErgoUTx,
-  explorerUtxToErgoTx
+  explorerToErgoBox,
+  explorerToErgoTx,
+  explorerUtxToErgoTx,
+  fixAssetInfo
 } from "./models"
+import {Paging} from "./paging"
 import {Sorting} from "./sorting"
-import {JSONBI} from "../utils/json"
-import {TokenSymbol} from "../types"
-import {Balance} from "../wallet/entities/balance"
 
 export interface ErgoNetwork {
   /** Get confirmed transaction by id.
